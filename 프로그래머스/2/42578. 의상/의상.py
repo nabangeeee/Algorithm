@@ -1,12 +1,11 @@
 from collections import Counter
 
 def solution(clothes):
-    cnt_data = Counter(i for _, i in clothes)
-    
+    data = Counter([kind for _, kind in clothes])
     answer = 1
-    for k in cnt_data.values():
-        answer *= (k+1)
     
+    for i in data.values():
+        answer *= (i + 1)
+        
     
-
-    return answer -1
+    return answer-1
