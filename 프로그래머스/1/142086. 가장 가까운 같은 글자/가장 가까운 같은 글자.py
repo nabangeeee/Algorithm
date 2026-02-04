@@ -1,13 +1,15 @@
 def solution(s):
-    last_dict = {}
-    result = []
     
-    for i, st in enumerate(s):
-        if st not in last_dict:
-            result.append(-1)
+    last_pot = {}
+    answer = []
+    
+    for i, ch in enumerate(s):
+        if ch not in last_pot:
+            answer.append(-1)
         else:
-            k = i - last_dict[st]
-            result.append(k)
-        last_dict[st] = i
+            answer.append(i - last_pot[ch])
+            
+        last_pot[ch] = i
+    
 
-    return result
+    return answer
